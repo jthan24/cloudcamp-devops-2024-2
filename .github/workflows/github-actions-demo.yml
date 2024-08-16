@@ -7,6 +7,9 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     environment: dev
+    env:
+      VARIABLE_LOCAL: ${{ env.VARIABLE }}
+      SECRET_LOCAL: ${{ secrets.SECRET }}
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -19,8 +22,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: echo "🍏 This is a secret ${{ secrets.SECRET }}."
-      - run: echo "🍏 This is a variable ${{ env.VARIABLE }}."
+      - run: echo "🍏 This is a variable ${{ env.VARIABLE_LOCAL }}."
+      - run: echo "🍏 This is a secret ${{ env.SECRET_LOCAL }}."
 
 ## Reference
 # https://docs.github.com/en/actions/writing-workflows/quickstart
