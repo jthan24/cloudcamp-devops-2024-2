@@ -24,6 +24,9 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: echo "🍏 This is a variable ${{ env.VARIABLE_LOCAL }}."
       - run: echo "🍏 This is a secret ${{ env.SECRET_LOCAL }}."
+      - run: echo "🍏 This is a variable ${{ vars.VARIABLE }}."
+      - run: echo "🍏 This is a secret ${{ secrets.SECRET }}."
+      
 
 ## Reference
 # https://docs.github.com/en/actions/writing-workflows/quickstart
