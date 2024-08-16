@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     env:
-      VARIABLE_LOCAL: ${{ env.VARIABLE }}
+      VARIABLE_LOCAL: ${{ vars.VARIABLE }}
       SECRET_LOCAL: ${{ secrets.SECRET }}
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
